@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "563634105599",
+    "project_id": "help1-300c6",
+    "storage_bucket": "help1-300c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563634105599:android:f3373f66ee2b2b8591b0ca",
+        "android_client_info": {
+          "package_name": "br.com.oleksinski.help"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563634105599-9eog03p1ndbg78227gpgomnugpvgfp5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3_K6xxRb_fgWt3oKVABB-E1WrdnGjslU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563634105599-9eog03p1ndbg78227gpgomnugpvgfp5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
