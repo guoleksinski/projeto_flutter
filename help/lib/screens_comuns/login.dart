@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         alertErro(context, e);
                                       },
                                       onSuccess: () {
-                                        pageController.animateToPage(1,
+                                        pageController.animateToPage(3,
                                             duration: const Duration(
                                                 milliseconds: 300),
                                             curve: Curves.easeOut);

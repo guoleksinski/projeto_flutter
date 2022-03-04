@@ -164,6 +164,30 @@ class Signup extends StatelessWidget {
                           onSaved: (pass) => user.password = pass!,
                         ),
                       )),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 20),
+                      child: Center(
+                        child: TextFormField(
+                          enabled: !userManager.loading,
+                          controller: _pass,
+                          decoration: const InputDecoration(
+                              labelText: 'Senha',
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              )),
+                          autocorrect: false,
+                          obscureText: true,
+                          validator: (password) {
+                            if (password!.isEmpty || password.length < 6) {
+                              return 'Senha inválida';
+                            } else {
+                              return null;
+                            }
+                          },
+                          onSaved: (pass) => user.password = pass!,
+                        ),
+                      )),
                   SizedBox(
                     height: 44,
                     child: ElevatedButton(
@@ -178,7 +202,7 @@ class Signup extends StatelessWidget {
                                         alertErro(context, e);
                                       },
                                       onSuccess: () {
-                                        pageController.animateToPage(1,
+                                        pageController.animateToPage(3,
                                             duration: const Duration(
                                                 milliseconds: 300),
                                             curve: Curves.easeOut);
