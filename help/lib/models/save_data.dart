@@ -14,18 +14,16 @@ class Users {
   String? cpf;
   String? id;
 
-  DocumentReference get ref => db.doc('users/$id');
+  DocumentReference get firestoreRef => db.doc('users/$id');
 
   Future<void> saveData() async {
-    await ref.set(toMap());
+    await firestoreRef.set(toMap());
   }
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
       'email': email,
-      'data': data,
-      'cpf': cpf,
     };
   }
 }

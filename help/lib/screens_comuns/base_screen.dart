@@ -3,7 +3,7 @@ import 'package:help/screens_anjo/home_anjo.dart';
 import 'package:help/screens_anjo_user/home_anjo_user.dart';
 import 'package:help/screens_comuns/chamado_screen.dart';
 import 'package:help/screens_comuns/login.dart';
-import 'package:help/screens_comuns/signUp.dart';
+import 'package:help/screens_comuns/signUp_screen.dart';
 import 'package:help/screens_user/home_user.dart';
 
 final PageController pageController = PageController(

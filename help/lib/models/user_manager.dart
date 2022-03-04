@@ -46,21 +46,22 @@ class UserManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> signUp({
-    required Users user,
-    required Function onFail,
-    required Function onSuccess,
-  }) async {
-    setLoading(true);
+  Future<void> signUp(
+      {required Users user,
+      required Function onFail,
+      required Function onSuccess}) async {
+    loading = true;
     try {
       final UserCredential result = await auth.createUserWithEmailAndPassword(
           email: user.email, password: user.password);
+
       this.user = result.user!;
-      saveData();
+      user.id = result.user?.uid;
+      await user.saveData();
       onSuccess();
     } on FirebaseAuthException catch (e) {
       onFail(getErrorString(e.code));
     }
-    setLoading(false);
+    loading = false;
   }
 }

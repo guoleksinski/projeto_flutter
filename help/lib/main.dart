@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
 
 //Método para verificar chamado
 
-verificarChamado() async {
+void verificarChamado() async {
   FirebaseFirestore db = FirebaseFirestore.instance;
   DocumentSnapshot snapshot = await db
       .collection("usuarios")
