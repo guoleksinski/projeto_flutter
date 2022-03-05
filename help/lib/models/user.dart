@@ -6,9 +6,22 @@ class Users {
   Users({
     required this.email,
     required this.password,
+    this.cpf,
+    this.name,
+    this.id,
+    this.data,
   });
-  String email;
-  String password;
+  Users.fromDocument(DocumentSnapshot document) {
+    Map dados = document.data() as Map;
+    id = document.id;
+    name = dados['name'] as String;
+    email = dados['email'] as String;
+    cpf = dados['cpf'] as String;
+    data = dados['data'] as String;
+  }
+
+  late String email;
+  late String password;
   String? name;
   String? data;
   String? cpf;

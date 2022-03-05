@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:help/screens_comuns/base_screen.dart';
+import 'package:help/screens_comuns/login.dart';
+import 'package:help/screens_comuns/signUp_screen.dart';
 import 'package:provider/provider.dart';
 import 'models/user_manager.dart';
 
@@ -20,6 +22,15 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (_) => UserManager(),
         child: MaterialApp(
+          // builder: Nuvigator.routes(
+          // initialRoute: 'login',
+          // routes: [
+          //  NuRouteBuilder(
+          //     path: 'login', builder: (_, __, ___) => const LoginScreen()),
+          // NuRouteBuilder(
+          //     path: 'second', builder: (_, __, ___) => const Signup()),
+          // ],
+          // ),
           title: 'Help',
           debugShowCheckedModeBanner: false,
           home: const BaseScreen(),

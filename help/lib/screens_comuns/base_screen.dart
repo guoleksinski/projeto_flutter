@@ -4,6 +4,7 @@ import 'package:help/screens_anjo_user/home_anjo_user.dart';
 import 'package:help/screens_comuns/chamado_screen.dart';
 import 'package:help/screens_comuns/login.dart';
 import 'package:help/screens_comuns/signUp_screen.dart';
+import 'package:help/screens_user/base_screen_user.dart';
 import 'package:help/screens_user/home_user.dart';
 
 final PageController pageController = PageController(
@@ -29,7 +30,8 @@ class BaseScreen extends StatelessWidget {
         // Fim das paginas comuns
 
         //paginas especificas para usuario
-        HomeUser(), //4
+        HomeUser(),
+        BaseScreenUser(), //4
 
         // Fim das paginas especificas para usuario
 

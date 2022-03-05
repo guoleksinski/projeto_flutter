@@ -43,6 +43,8 @@ dependencies:
   easy_mask: ^2.0.1
   flutter_cep2: ^0.0.11
   curved_navigation_bar: ^1.0.3
+  
+
 
   
   

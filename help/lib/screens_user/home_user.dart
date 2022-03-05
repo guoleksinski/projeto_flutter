@@ -11,6 +11,8 @@ class HomeUser extends StatefulWidget {
 class _HomeUserState extends State<HomeUser> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.amberAccent,
+    );
   }
 }
