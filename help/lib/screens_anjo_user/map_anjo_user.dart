@@ -11,7 +11,8 @@ class _MapAnjoUserState extends State<MapAnjoUser> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
+      color: Colors.white,
+      child: const Text(
         'MapAnjoUser',
       ),
     );

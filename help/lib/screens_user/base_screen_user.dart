@@ -6,9 +6,9 @@ import 'package:help/screens_user/profile_user.dart';
 
 int _page = 0;
 final screens = [
-  HomeUser(),
-  ProfileUser(),
-  MapUser(),
+  const HomeUser(),
+  const ProfileUser(),
+  const MapUser(),
 ];
 GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
@@ -27,7 +27,7 @@ class _BaseScreenUserState extends State<BaseScreenUser> {
           key: _bottomNavigationKey,
           index: 0,
           height: 60.0,
-          items: <Widget>[
+          items: const <Widget>[
             Icon(
               Icons.add,
               size: 30,
@@ -48,7 +48,7 @@ class _BaseScreenUserState extends State<BaseScreenUser> {
           buttonBackgroundColor: Colors.white,
           backgroundColor: Colors.pink,
           animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 500),
+          animationDuration: const Duration(milliseconds: 500),
           onTap: (index) {
             setState(() {
               _page = index;

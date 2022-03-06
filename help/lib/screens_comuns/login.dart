@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:help/helpers/validators.dart';
 import 'package:help/models/user.dart';
@@ -86,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       )),
                   Align(
                     alignment: Alignment.bottomRight,
-                    // ignore: deprecated_member_use
                     child: FlatButton(
                       child: const Text('Esqueci minha senha'),
                       onPressed: () {},
@@ -116,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 }
                               },
                         child: userManager.loading
-                            ? CircularProgressIndicator()
+                            ? const CircularProgressIndicator()
                             : const Text(
                                 "Entrar",
                                 style: TextStyle(color: Colors.white),

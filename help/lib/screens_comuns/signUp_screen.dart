@@ -1,6 +1,6 @@
+// ignore_for_file: deprecated_member_use
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 import 'package:easy_mask/easy_mask.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:help/helpers/validators.dart';
 import 'package:help/models/user.dart';
@@ -18,6 +18,7 @@ final TextEditingController _dateNasc = TextEditingController();
 final TextEditingController _cpf = TextEditingController();
 
 final Users user = Users(email: _email.text, password: _pass.text);
+int selectedRadio = 0;
 
 class Signup extends StatelessWidget {
   const Signup({Key? key}) : super(key: key);
@@ -167,26 +168,37 @@ class Signup extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.only(top: 10, bottom: 20),
                       child: Center(
-                        child: TextFormField(
-                          enabled: !userManager.loading,
-                          controller: _pass,
-                          decoration: const InputDecoration(
-                              labelText: 'Senha',
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              )),
-                          autocorrect: false,
-                          obscureText: true,
-                          validator: (password) {
-                            if (password!.isEmpty || password.length < 6) {
-                              return 'Senha inválida';
-                            } else {
-                              return null;
-                            }
-                          },
-                          onSaved: (pass) => user.password = pass!,
-                        ),
+                        child: Row(children: [
+                          ButtonBar(
+                            alignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Radio(
+                                value: 1,
+                                groupValue: selectedRadio,
+                                activeColor: Colors.green,
+                                onChanged: (val) {
+                                  selectedRadio = val as int;
+                                },
+                              ),
+                              Radio(
+                                value: 2,
+                                groupValue: selectedRadio,
+                                activeColor: Colors.green,
+                                onChanged: (val) {
+                                  selectedRadio = val as int;
+                                },
+                              ),
+                              Radio(
+                                value: 3,
+                                groupValue: selectedRadio,
+                                activeColor: Colors.green,
+                                onChanged: (val) {
+                                  selectedRadio = val as int;
+                                },
+                              ),
+                            ],
+                          )
+                        ]),
                       )),
                   SizedBox(
                     height: 44,
@@ -210,7 +222,7 @@ class Signup extends StatelessWidget {
                                 }
                               },
                         child: userManager.loading
-                            ? CircularProgressIndicator()
+                            ? const CircularProgressIndicator()
                             : const Text(
                                 "Cadastrar",
                                 style: TextStyle(color: Colors.white),
@@ -222,7 +234,6 @@ class Signup extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
-                    // ignore: deprecated_member_use
                     child: FlatButton(
                       child: const Text('Voltar para o login'),
                       onPressed: () {},

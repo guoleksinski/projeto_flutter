@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:help/helpers/firebase_errors.dart';
@@ -51,7 +50,7 @@ class UserManager extends ChangeNotifier {
       final DocumentSnapshot docUser =
           await firestore.collection('users').doc(currentUser.uid).get();
       users = Users.fromDocument(docUser);
-      pageController.jumpToPage(4);
+      pageController.jumpToPage(2);
     }
     notifyListeners();
   }
